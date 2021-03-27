@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductList from './Components/Products/ProductList';
+import CartList from './Components/Carts/CartList';
+
+import { CartProvider } from './Components/CartContext'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <div className="ShoppingApp">
+        <div className="section_products">
+            <ProductList />
+        </div>
+        <div className="section_carts">
+            <CartList />
+        </div>
+      </div>
+    </CartProvider>
   );
 }
 
