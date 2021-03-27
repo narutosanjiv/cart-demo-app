@@ -1,4 +1,3 @@
-import './App.css';
 import ProductList from './Components/Products/ProductList';
 import CartList from './Components/Carts/CartList';
 
@@ -8,8 +7,14 @@ function App() {
   return (
     <CartProvider>
       <div className="ShoppingApp">
+        <div>
+          ================Products==============
+        </div>
         <div className="section_products">
             <ProductList />
+        </div>
+        <div>
+          ================Carts==============
         </div>
         <div className="section_carts">
             <CartList />

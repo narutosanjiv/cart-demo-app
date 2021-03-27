@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../CartContext'
 
-const Product = (props) => {
-    const { product: {title, image, description } } = props
+const Product = ({product}) => {
+    const { title, image, description  } = product;
     const [_, setCart] = useContext(CartContext);
     
     const AddtoCart = (product_elem) =>{
@@ -20,7 +20,7 @@ const Product = (props) => {
                 {description}
             </span>
             <span >
-                <button className="add_to_cart" onClick={AddtoCart}>
+                <button className="add_to_cart" onClick={() => (AddtoCart(product))}>
                     Add To Cart 
                 </button>
             </span>
